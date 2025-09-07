@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { projects } from '@/data/projects';
+import { use } from 'react';
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-  const project = projects.find(p => p.id === params.id);
+export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
+  const project = projects.find(p => p.id === id);
 
   if (!project) {
     notFound();
@@ -107,13 +109,6 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                     fill
                     className="object-cover hover-scale-105 transition-transform duration-700"
                   />
-                  {image.caption && (
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-6">
-                      <p className="text-white text-sm font-light">
-                        {image.caption}
-                      </p>
-                    </div>
-                  )}
                 </motion.div>
               ))}
             </div>

@@ -38,18 +38,18 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="font-serif text-xl lg:text-2xl font-light tracking-wide" style={{ color: '#2a2a2a' }}>
-            <span style={{ color: '#8b7355' }}>A</span>lexandra <span style={{ color: '#8b7355' }}>M</span>itchell
+          <Link href="/" className="font-light text-xl lg:text-2xl tracking-wide" style={{ color: '#000000' }}>
+            Joanna Mrowczynska
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-light tracking-wide transition-colors duration-200 hover:opacity-80"
-                style={{ color: '#2a2a2a' }}
+                className="text-sm font-light tracking-wide transition-colors duration-200 hover:opacity-60 px-2"
+                style={{ color: '#000000' }}
               >
                 {item.label}
               </Link>
@@ -61,26 +61,26 @@ const Navigation = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden relative w-6 h-6 focus:outline-none"
             aria-label="Toggle menu"
-            style={{ color: '#2a2a2a' }}
+            style={{ color: '#000000' }}
           >
             <span
               className="absolute top-0 left-0 w-full h-0.5 transition-all duration-300"
               style={{ 
-                backgroundColor: '#2a2a2a',
+                backgroundColor: '#000000',
                 transform: isOpen ? 'rotate(45deg) translateY(10px)' : 'none'
               }}
             />
             <span
               className="absolute top-2.5 left-0 w-full h-0.5 transition-all duration-300"
               style={{ 
-                backgroundColor: '#2a2a2a',
+                backgroundColor: '#000000',
                 opacity: isOpen ? 0 : 1
               }}
             />
             <span
               className="absolute top-5 left-0 w-full h-0.5 transition-all duration-300"
               style={{ 
-                backgroundColor: '#2a2a2a',
+                backgroundColor: '#000000',
                 transform: isOpen ? 'rotate(-45deg) translateY(-10px)' : 'none'
               }}
             />

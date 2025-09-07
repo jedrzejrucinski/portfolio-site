@@ -1,4 +1,4 @@
-# Alexandra Mitchell - Makeup Artist Portfolio
+# Joanna Mrowczynska - Makeup Artist Portfolio
 
 A modern, minimalistic portfolio website built for a professional makeup artist. This site showcases makeup artistry work through high-quality photography with smooth animations and an artistic feel inspired by top portfolio sites.
 

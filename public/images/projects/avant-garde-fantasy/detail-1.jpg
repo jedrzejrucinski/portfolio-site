@@ -1,9 +1,0 @@
-<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="800" height="1200" fill="#0A0A0A"/>
-<rect x="50" y="500" width="700" height="200" rx="10" fill="#1E40AF"/>
-<text x="400" y="580" text-anchor="middle" fill="#60A5FA" font-family="Arial" font-size="20" font-weight="300">Geometric Detail</text>
-<text x="400" y="620" text-anchor="middle" fill="#60A5FA" font-family="Arial" font-size="14">Intricate geometric patterns</text>
-<polygon points="400,200 450,250 400,300 350,250" fill="#1E40AF"/>
-<polygon points="450,250 500,300 450,350 400,300" fill="#60A5FA"/>
-<polygon points="350,250 400,300 350,350 300,300" fill="#E5E7EB"/>
-</svg>

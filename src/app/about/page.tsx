@@ -21,7 +21,7 @@ export default function AboutPage() {
             </h1>
             <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
               <p>
-                Hello! I'm Alexandra Mitchell, a passionate makeup artist with over 8 years of experience 
+                Hello! I'm Joanna Mrowczynska, a passionate makeup artist with over 8 years of experience 
                 in the beauty industry. Based in New York City, I specialize in editorial, fashion, 
                 and creative makeup artistry that transforms visions into stunning realities.
               </p>
@@ -40,7 +40,7 @@ export default function AboutPage() {
           </div>
 
           <motion.div 
-            className="relative aspect-[3/4] overflow-hidden"
+            className="relative w-80 h-80 mx-auto overflow-hidden rounded-full"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}

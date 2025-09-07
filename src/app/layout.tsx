@@ -17,12 +17,12 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Alexandra Mitchell - Makeup Artist",
+  title: "Joanna Mrowczynska - Makeup Artist",
   description: "Professional makeup artist specializing in editorial, fashion, and creative makeup artistry. View my portfolio of transformative makeup looks.",
   keywords: "makeup artist, editorial makeup, fashion makeup, beauty, creative makeup, New York makeup artist",
-  authors: [{ name: "Alexandra Mitchell" }],
+  authors: [{ name: "Joanna Mrowczynska" }],
   openGraph: {
-    title: "Alexandra Mitchell - Makeup Artist",
+    title: "Joanna Mrowczynska - Makeup Artist",
     description: "Professional makeup artist specializing in editorial, fashion, and creative makeup artistry.",
     type: "website",
     locale: "en_US",

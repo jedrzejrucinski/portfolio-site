@@ -1,18 +1,11 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { projects, categories } from '@/data/projects';
+import { projects } from '@/data/projects';
 
 export default function ProjectsPage() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-
-  const filteredProjects = selectedCategory === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
-
   return (
     <div className="min-h-screen py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -31,34 +24,12 @@ export default function ProjectsPage() {
           </p>
         </motion.div>
 
-        {/* Category Filter */}
-        <motion.div 
-          className="flex flex-wrap justify-center gap-4 mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 text-sm font-light tracking-wide transition-all duration-300 hover-scale-105 ${
-                selectedCategory === category
-                  ? 'bg-accent text-white'
-                  : 'border border-accent text-accent hover:bg-accent hover:text-white'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </motion.div>
-
         {/* Projects Grid */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
           layout
         >
-          {filteredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <motion.div
               key={project.id}
               layout
@@ -109,7 +80,7 @@ export default function ProjectsPage() {
         </motion.div>
 
         {/* No projects message */}
-        {filteredProjects.length === 0 && (
+        {projects.length === 0 && (
           <motion.div 
             className="text-center py-16"
             initial={{ opacity: 0 }}
@@ -117,7 +88,7 @@ export default function ProjectsPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-gray-500 font-light">
-              No projects found in the {selectedCategory} category.
+              No projects found.
             </p>
           </motion.div>
         )}
