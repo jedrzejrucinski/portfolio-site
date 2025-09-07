@@ -26,34 +26,12 @@ function createImage(src: string, alt: string, caption?: string): ProjectImage {
  * This makes it easy to add new images - just drop them in the folder!
  */
 export const projectImages = {
-  'ethereal-beauty': [
-    createImage('/images/projects/ethereal-beauty/hero.jpg', 'Ethereal beauty makeup look with glowing skin', 'Glowing skin with subtle pink undertones'),
-    createImage('/images/projects/ethereal-beauty/detail-1.jpg', 'Close-up of ethereal eye makeup', 'Soft shimmer and natural lashes'),
-    createImage('/images/projects/ethereal-beauty/detail-2.jpg', 'Side profile with ethereal makeup', 'Luminous complexion with natural glow')
-  ],
-  
   'surrealism': [
     createImage('/images/projects/surrealism/IMG_7115.JPG', 'Surrealist makeup with bold colors', 'Artistic surrealist makeup design'),
     createImage('/images/projects/surrealism/IMG_7116.JPG', 'Surrealist makeup artistic detail', 'Creative expression and bold design'),
     createImage('/images/projects/surrealism/IMG_7117.JPG', 'Surrealist makeup side profile', 'Artistic profile with dramatic elements'),
     createImage('/images/projects/surrealism/IMG_7118.JPG', 'Close-up of surrealist eye art', 'Intricate artistic details'),
     createImage('/images/projects/surrealism/IMG_7123.JPG', 'Surrealist makeup artistic expression', 'Creative surrealist concept')
-  ],
-  
-  'natural-glow': [
-    createImage('/images/projects/natural-glow/hero.jpg', 'Natural glowing makeup look', 'Fresh, dewy skin with natural flush')
-  ],
-  
-  'fashion-week': [
-    createImage('/images/projects/fashion-week/hero.jpg', 'Fashion week backstage makeup', 'Backstage energy and creativity')
-  ],
-  
-  'bridal-elegance': [
-    createImage('/images/projects/bridal-elegance/hero.jpg', 'Elegant bridal makeup look', 'Classic elegance with modern touches')
-  ],
-  
-  'special-effects': [
-    createImage('/images/projects/special-effects/hero.jpg', 'Special effects makeup transformation', 'Dramatic transformation using prosthetics')
   ],
 
   'zapach-twoich-lez': [

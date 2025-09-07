@@ -1,9 +1,0 @@
-<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="800" height="1200" fill="#F8F4F0"/>
-<rect x="50" y="500" width="700" height="200" rx="10" fill="#E5D5C8"/>
-<text x="400" y="580" text-anchor="middle" fill="#8B7355" font-family="Arial" font-size="20" font-weight="300">Ethereal Detail</text>
-<text x="400" y="620" text-anchor="middle" fill="#8B7355" font-family="Arial" font-size="14">Soft shimmer and natural lashes</text>
-<ellipse cx="400" cy="350" rx="100" ry="80" fill="#F0E6D2"/>
-<circle cx="370" cy="320" r="15" fill="#8B7355"/>
-<circle cx="430" cy="320" r="15" fill="#8B7355"/>
-</svg>
