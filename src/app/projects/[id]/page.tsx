@@ -1,15 +1,28 @@
 'use client';
 
+import { useState } from 'react';
 import { notFound } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { projects } from '@/data/projects';
+import FullscreenGallery from '@/components/FullscreenGallery';
 import { use } from 'react';
 
 export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const project = projects.find(p => p.id === id);
+  const [fullscreenOpen, setFullscreenOpen] = useState(false);
+  const [fullscreenIndex, setFullscreenIndex] = useState(0);
+
+  if (!project) {
+    notFound();
+  }
+
+  const openFullscreen = (index: number) => {
+    setFullscreenIndex(index);
+    setFullscreenOpen(true);
+  };
 
   if (!project) {
     notFound();
@@ -69,14 +82,18 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             </div>
             
             {/* Hero Image */}
-            <div className="relative aspect-[3/4] overflow-hidden">
+            <div 
+              className="relative aspect-[3/4] overflow-hidden cursor-pointer group"
+              onClick={() => openFullscreen(0)}
+            >
               <Image
                 src={project.images[0].src}
                 alt={project.images[0].alt}
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
                 priority
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
             </div>
           </div>
         </motion.div>
@@ -97,18 +114,20 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
               {project.images.slice(1).map((image, index) => (
                 <motion.div
                   key={index}
-                  className="relative aspect-[4/5] overflow-hidden"
+                  className="relative aspect-[4/5] overflow-hidden cursor-pointer group"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
+                  onClick={() => openFullscreen(index + 1)}
                 >
                   <Image
                     src={image.src}
                     alt={image.alt}
                     fill
-                    className="object-cover hover-scale-105 transition-transform duration-700"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
                 </motion.div>
               ))}
             </div>
@@ -138,6 +157,14 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           </div>
         </motion.div>
       </div>
+
+      {/* Fullscreen Gallery */}
+      <FullscreenGallery
+        images={project.images}
+        initialIndex={fullscreenIndex}
+        isOpen={fullscreenOpen}
+        onClose={() => setFullscreenOpen(false)}
+      />
     </div>
   );
 }
