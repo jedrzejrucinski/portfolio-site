@@ -1,0 +1,11 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="1600" fill="#FFFBEB"/>
+<rect x="100" y="700" width="1000" height="200" rx="10" fill="#FEF3C7"/>
+<text x="600" y="780" text-anchor="middle" fill="#92400E" font-family="Arial" font-size="24" font-weight="300">Bridal Elegance</text>
+<text x="600" y="820" text-anchor="middle" fill="#92400E" font-family="Arial" font-size="16">Classic elegance with modern touches</text>
+<circle cx="600" cy="500" r="150" fill="#FEF9C3"/>
+<circle cx="550" cy="450" r="18" fill="#92400E"/>
+<circle cx="650" cy="450" r="18" fill="#92400E"/>
+<path d="M520 550 Q600 570 680 550" stroke="#92400E" stroke-width="2" fill="none"/>
+<path d="M500 400 Q600 350 700 400" stroke="#D97706" stroke-width="15" fill="none" opacity="0.3"/>
+</svg>

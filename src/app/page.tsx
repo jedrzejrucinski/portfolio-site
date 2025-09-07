@@ -1,103 +1,202 @@
-import Image from "next/image";
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { projects, artist } from '@/data/projects';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const featuredProjects = projects.filter(project => project.featured);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center" style={{ background: 'linear-gradient(to bottom, #ffffff, #f8f6f3)' }}>
+        <motion.div 
+          className="max-w-4xl mx-auto px-6 lg:px-8 text-center w-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        >
+          <motion.div
+            className="mb-8 flex justify-center"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={artist.avatar}
+              alt={artist.name}
+              width={120}
+              height={120}
+              className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover border-4 border-white shadow-lg"
+              style={{ display: 'block' }}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </motion.div>
+
+          <motion.h1 
+            className="font-serif text-4xl lg:text-6xl xl:text-7xl font-light mb-6 text-center"
+            style={{ color: '#2a2a2a', lineHeight: '1.1' }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Read our docs
-          </a>
+            {artist.name}
+          </motion.h1>
+
+          <motion.p 
+            className="text-lg lg:text-xl font-light max-w-2xl mx-auto mb-8 text-center"
+            style={{ color: '#6b7280' }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            {artist.title}
+          </motion.p>
+
+          <motion.p 
+            className="text-base lg:text-lg font-light max-w-3xl mx-auto mb-12 text-center"
+            style={{ color: '#9ca3af', lineHeight: '1.6' }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            {artist.bio}
+          </motion.p>
+
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <Link 
+              href="/projects"
+              className="px-8 py-3 text-white font-light tracking-wide transition-all duration-300 hover-scale-105 text-center"
+              style={{ backgroundColor: '#8b7355' }}
+            >
+              View My Work
+            </Link>
+            <Link 
+              href="/contact"
+              className="px-8 py-3 border font-light tracking-wide transition-all duration-300 hover-scale-105 text-center"
+              style={{ borderColor: '#8b7355', color: '#8b7355' }}
+            >
+              Get In Touch
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div 
+          className="absolute bottom-8 left-50"
+          style={{ transform: 'translateX(-50%)' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1 }}
+        >
+          <div className="w-6 h-10 border-2 rounded-full flex justify-center" style={{ borderColor: '#8b7355' }}>
+            <motion.div 
+              className="w-1 h-3 rounded-full mt-2"
+              style={{ backgroundColor: '#8b7355' }}
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-24 lg:py-32" style={{ backgroundColor: '#ffffff' }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-serif text-3xl lg:text-4xl xl:text-5xl font-light mb-4 text-center" style={{ color: '#2a2a2a' }}>
+              Featured Work
+            </h2>
+            <p className="text-lg font-light max-w-2xl mx-auto text-center" style={{ color: '#6b7280' }}>
+              A curated selection of my most impactful makeup artistry projects
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {featuredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                variants={fadeInUp}
+                className="group cursor-pointer"
+              >
+                <Link href={`/projects/${project.id}`}>
+                  <div className="relative overflow-hidden mb-6" style={{ aspectRatio: '3/4' }}>
+                    <Image
+                      src={project.images[0].src}
+                      alt={project.images[0].alt}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover-scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-all duration-300" />
+                  </div>
+                  <div className="space-y-2 text-center lg:text-left">
+                    <h3 className="font-serif text-xl lg:text-2xl font-light" style={{ color: '#2a2a2a' }}>
+                      {project.title}
+                    </h3>
+                    <p className="text-sm uppercase tracking-wider" style={{ color: '#9ca3af' }}>
+                      {project.category} • {project.year}
+                    </p>
+                    <p className="font-light" style={{ color: '#6b7280', lineHeight: '1.5' }}>
+                      {project.description}
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div 
+            className="text-center mt-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Link 
+              href="/projects"
+              className="inline-flex items-center px-8 py-3 border font-light tracking-wide transition-all duration-300 hover-scale-105"
+              style={{ borderColor: '#8b7355', color: '#8b7355' }}
+            >
+              View All Projects
+              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
     </div>
   );
 }

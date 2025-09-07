@@ -1,0 +1,10 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="400" rx="200" fill="#F8F4F0"/>
+<circle cx="200" cy="200" r="120" fill="#E5D5C8"/>
+<circle cx="170" cy="170" r="12" fill="#8B7355"/>
+<circle cx="230" cy="170" r="12" fill="#8B7355"/>
+<path d="M160 230 Q200 250 240 230" stroke="#8B7355" stroke-width="3" fill="none"/>
+<path d="M120 120 Q200 80 280 120" stroke="#8B7355" stroke-width="20" fill="none" opacity="0.3"/>
+<text x="200" y="320" text-anchor="middle" fill="#8B7355" font-family="Arial" font-size="16" font-weight="300">Alexandra Mitchell</text>
+<text x="200" y="340" text-anchor="middle" fill="#8B7355" font-family="Arial" font-size="12">Makeup Artist</text>
+</svg>

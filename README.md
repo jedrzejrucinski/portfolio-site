@@ -1,36 +1,179 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alexandra Mitchell - Makeup Artist Portfolio
 
-## Getting Started
+A modern, minimalistic portfolio website built for a professional makeup artist. This site showcases makeup artistry work through high-quality photography with smooth animations and an artistic feel inspired by top portfolio sites.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Modern Design**: Clean, minimalistic aesthetic with artistic touches
+- **Smooth Animations**: Framer Motion powered animations throughout the site
+- **Photography-First**: Image galleries optimized for showcasing makeup work
+- **Responsive Design**: Fully responsive across all devices
+- **Easy Content Management**: Simple project structure for adding new work
+- **Performance Optimized**: Built with Next.js 15 and optimized images
+- **Professional Layout**: Navigation, project filtering, and contact forms
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS with custom design tokens
+- **Animations**: Framer Motion
+- **Images**: Next.js Image component for optimization
+- **Fonts**: Inter & Playfair Display from Google Fonts
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # App Router pages
+│   ├── about/             # About page
+│   ├── contact/           # Contact page
+│   ├── projects/          # Projects listing and individual project pages
+│   └── layout.tsx         # Root layout
+├── components/            # Reusable UI components
+│   ├── Navigation.tsx     # Site navigation
+│   └── Footer.tsx         # Site footer
+├── data/                  # Project data and content
+│   └── projects.ts        # Project information and artist bio
+├── types/                 # TypeScript type definitions
+│   └── index.ts           # Project and artist types
+└── styles/                # Global styles
+    └── globals.css        # Tailwind and custom CSS
+
+public/
+└── images/               # Static image assets
+    ├── projects/         # Project photo galleries
+    └── artist/           # Artist photos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone and install dependencies:**
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Start the development server:**
+```bash
+npm run dev
+```
 
-## Learn More
+3. **Open [http://localhost:3000](http://localhost:3000) to view the site**
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 Adding New Projects
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To add a new makeup project:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Add project data** in `src/data/projects.ts`:
+```typescript
+{
+  id: "project-name",
+  title: "Project Title",
+  description: "Project description...",
+  category: "Editorial", // Editorial, Creative, Beauty, Fashion, Bridal, SFX
+  year: 2024,
+  client: "Client Name", // Optional
+  featured: true, // Show on homepage
+  images: [
+    {
+      src: "/images/projects/project-name/hero.jpg",
+      alt: "Alt text",
+      width: 1200,
+      height: 1600,
+      caption: "Image caption" // Optional
+    }
+  ]
+}
+```
 
-## Deploy on Vercel
+2. **Add images** to `public/images/projects/project-name/`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **The project will automatically appear** in the projects grid and be accessible via `/projects/project-name`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Customization
+
+### Artist Information
+Update the artist bio and contact information in `src/data/projects.ts`:
+
+```typescript
+export const artist: Artist = {
+  name: "Your Name",
+  title: "Your Title",
+  bio: "Your bio...",
+  email: "your@email.com",
+  instagram: "@your_handle",
+  location: "Your Location",
+  avatar: "/images/artist/avatar.jpg"
+};
+```
+
+### Design Tokens
+Customize colors and styling in `src/app/globals.css`:
+
+```css
+:root {
+  --background: #fefefe;
+  --foreground: #2a2a2a;
+  --accent: #8b7355;      /* Change this for brand color */
+  --muted: #f8f6f3;
+  --border: #e5e5e5;
+}
+```
+
+### Categories
+Add or modify project categories in `src/data/projects.ts`:
+
+```typescript
+export const categories = [
+  "All",
+  "Editorial",
+  "Creative", 
+  "Beauty",
+  "Fashion",
+  "Bridal",
+  "SFX"
+];
+```
+
+## 📱 Pages
+
+- **Home** (`/`) - Hero section with featured projects
+- **Projects** (`/projects`) - Filterable project gallery
+- **Project Detail** (`/projects/[id]`) - Individual project showcase
+- **About** (`/about`) - Artist biography and experience
+- **Contact** (`/contact`) - Contact form and information
+
+## 🚀 Deployment
+
+Deploy easily on [Vercel](https://vercel.com):
+
+```bash
+npm run build
+```
+
+Or deploy to any platform that supports Next.js.
+
+## 📸 Image Guidelines
+
+For best results:
+- **Hero images**: 1200x1600px (3:4 aspect ratio)
+- **Detail images**: 800x1200px or similar portrait orientation
+- **File format**: JPG for photos, PNG for graphics
+- **File size**: Optimize for web (< 500KB recommended)
+- **File naming**: Use descriptive names (hero.jpg, detail-1.jpg, etc.)
+
+## 🎯 SEO & Performance
+
+- Optimized meta tags and Open Graph data
+- Next.js Image component for automatic optimization
+- Semantic HTML structure
+- Fast loading with code splitting
+- Mobile-first responsive design
+
+## 📄 License
+
+This project is created as a portfolio template. Customize and use for your own makeup artistry portfolio.
+
+---
+
+Built with ❤️ for makeup artists who want to showcase their work beautifully.

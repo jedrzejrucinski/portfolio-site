@@ -1,0 +1,9 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="1600" fill="#0A0A0A"/>
+<rect x="100" y="700" width="1000" height="200" rx="10" fill="#1E40AF"/>
+<text x="600" y="780" text-anchor="middle" fill="#60A5FA" font-family="Arial" font-size="24" font-weight="300">Avant-Garde Fantasy</text>
+<text x="600" y="820" text-anchor="middle" fill="#60A5FA" font-family="Arial" font-size="16">Electric blue and silver geometric design</text>
+<polygon points="600,300 700,400 600,500 500,400" fill="#1E40AF"/>
+<polygon points="550,350 650,350 600,450" fill="#60A5FA"/>
+<circle cx="600" cy="400" r="30" fill="#E5E7EB"/>
+</svg>
