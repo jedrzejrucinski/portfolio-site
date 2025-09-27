@@ -51,7 +51,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
 
         {/* Project Header */}
         <motion.div 
-          className="mb-16"
+          className="mb-32 lg:mb-48"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -98,45 +98,42 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           </div>
         </motion.div>
 
+        {/* Spacer Section */}
+        <div className="py-32 lg:py-48"></div>
+
         {/* Image Gallery */}
-        {project.images.length > 1 && (
-          <motion.div 
-            className="space-y-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h2 className="font-serif text-2xl lg:text-3xl font-light text-center">
-              Project Gallery
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-              {project.images.slice(1).map((image, index) => (
-                <motion.div
-                  key={index}
-                  className="relative aspect-[4/5] overflow-hidden cursor-pointer group"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  onClick={() => openFullscreen(index + 1)}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        )}
+        <motion.div 
+          className="mb-20 lg:mb-32"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+            {project.images.map((image, index) => (
+              <motion.div
+                key={index}
+                className="relative aspect-square overflow-hidden cursor-pointer group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                onClick={() => openFullscreen(index)}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Navigation to next/previous projects */}
         <motion.div 
-          className="mt-24 pt-16 border-t border-border"
+          className="mt-16 pt-20 lg:pt-24 border-t border-border bg-gray-50/50"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
