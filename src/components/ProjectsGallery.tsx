@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Project } from '@/types';
@@ -38,7 +38,7 @@ export default function ProjectsGallery({ projects }: ProjectsGalleryProps) {
 interface ProjectCardProps {
   project: Project;
   index: number;
-  scrollProgress: any;
+  scrollProgress: MotionValue<number>;
 }
 
 function ProjectCard({ project, index, scrollProgress }: ProjectCardProps) {

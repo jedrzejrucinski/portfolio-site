@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { artist } from '@/data/projects';
 
 export default function AboutPage() {
@@ -21,7 +22,7 @@ export default function AboutPage() {
             </h1>
             <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
               <p>
-                Hello! I'm Joanna Mrowczynska, a passionate makeup artist with over 8 years of experience 
+                Hello! I&apos;m Joanna Mrowczynska, a passionate makeup artist with over 8 years of experience 
                 in the beauty industry. Based in New York City, I specialize in editorial, fashion, 
                 and creative makeup artistry that transforms visions into stunning realities.
               </p>
@@ -31,9 +32,9 @@ export default function AboutPage() {
                 natural beauty and creating artistic expressions that tell compelling stories.
               </p>
               <p>
-                I believe that makeup is more than just cosmetics—it's an art form that celebrates 
-                individuality and empowers confidence. Whether I'm working on a high-fashion editorial, 
-                a bride's special day, or a creative concept shoot, my goal is always to bring out 
+                I believe that makeup is more than just cosmetics—it&apos;s an art form that celebrates 
+                individuality and empowers confidence. Whether I&apos;m working on a high-fashion editorial, 
+                a bride&apos;s special day, or a creative concept shoot, my goal is always to bring out 
                 the unique beauty in every person I work with.
               </p>
             </div>
@@ -263,10 +264,10 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-serif text-3xl lg:text-4xl font-light mb-6">
-            Let's Create Something Beautiful Together
+            Let&apos;s Create Something Beautiful Together
           </h2>
           <p className="text-lg text-gray-600 font-light max-w-2xl mx-auto mb-8">
-            Ready to bring your vision to life? I'd love to collaborate with you on your next project.
+            Ready to bring your vision to life? I&apos;d love to collaborate with you on your next project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -275,12 +276,12 @@ export default function AboutPage() {
             >
               Send Me an Email
             </a>
-            <a 
+            <Link 
               href="/projects"
               className="px-8 py-3 border border-accent text-accent font-light tracking-wide hover:bg-accent hover:text-white transition-all duration-300 hover-scale-105"
             >
               View My Work
-            </a>
+            </Link>
           </div>
         </motion.section>
       </div>

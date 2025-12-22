@@ -5,9 +5,6 @@ import { ProjectImage } from '@/types';
  * This eliminates the need to manually list every image
  */
 
-// Common image extensions
-const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG', '.WEBP'];
-
 /**
  * Creates an image object with smart defaults
  */

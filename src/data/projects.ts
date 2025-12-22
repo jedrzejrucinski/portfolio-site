@@ -1,5 +1,5 @@
 import { Project, Artist } from '@/types';
-import { projectImages, addProjectImages } from '@/utils/imageHelpers';
+import { projectImages } from '@/utils/imageHelpers';
 
 export const artist: Artist = {
   name: "Joanna Mrowczynska",
