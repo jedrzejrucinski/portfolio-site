@@ -43,6 +43,17 @@ export const projectImages = {
   'pomarancza': [
     createImage('/images/projects/pomarancza/IMG_5913.jpg', 'Pomarancza makeup artistry with orange tones', 'Vibrant orange-inspired makeup look'),
     createImage('/images/projects/pomarancza/IMG_5940.jpg', 'Pomarancza artistic makeup detail', 'Creative orange color palette expression')
+  ],
+
+  'zarost': [
+    createImage('/images/projects/zarost/IMG_2181.jpg', 'Facial hair characterization - detailed beard work', 'Realistic beard application'),
+    createImage('/images/projects/zarost/IMG_7562.jpg', 'Professional facial hair styling', 'Detailed mustache and beard characterization'),
+    createImage('/images/projects/zarost/IMG_7578.jpg', 'Close-up of facial hair detail work', 'Precision facial hair application')
+  ],
+
+  'kryza': [
+    createImage('/images/projects/kryza/IMG_1692.jpg', 'Handcrafted Renaissance ruff collar', 'Historical period kryza costume piece'),
+    createImage('/images/projects/kryza/IMG_1719.jpg', 'Detailed Renaissance collar work', 'Authentic period ruff characterization')
   ]
 };
 

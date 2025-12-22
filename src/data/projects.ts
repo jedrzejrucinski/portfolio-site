@@ -38,6 +38,24 @@ export const projects: Project[] = [
     year: 2024,
     featured: true,
     images: projectImages['pomarancza']
+  },
+  {
+    id: "zarost",
+    title: "Zarost",
+    description: "Detailed facial hair characterization showcasing precision in creating realistic beard and mustache applications for film and theater.",
+    category: "SFX",
+    year: 2024,
+    featured: true,
+    images: projectImages['zarost']
+  },
+  {
+    id: "kryza",
+    title: "Kryza",
+    description: "Handcrafted period ruff collar showcasing historical costume and makeup artistry with meticulous attention to Renaissance detail.",
+    category: "Creative",
+    year: 2024,
+    featured: true,
+    images: projectImages['kryza']
   }
 ];
 
